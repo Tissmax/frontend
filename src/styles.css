@@ -16,7 +16,7 @@ a, p, span, article {
     font-family: "Open Sans";
     font-weight: 400;
 }
-h1 {
+h1, h2, h3 {
     font-family: "Yanone Kaffeesatz", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;

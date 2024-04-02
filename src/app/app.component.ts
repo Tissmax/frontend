@@ -27,30 +27,8 @@ export class AppComponent {
   percentOfScreenHeightScrolled: string = "";
   scroll: boolean = false;
 
-  setScrollVar() {
-    setTimeout(()=>{
-      const htmlElement = document.documentElement
-      let a = htmlElement.scrollTop / htmlElement.clientHeight * 100;
-      this.percentOfScreenHeightScrolled = a.toString();
-      htmlElement.style.setProperty("--scroll", this.percentOfScreenHeightScrolled)
-      console.log(this.percentOfScreenHeightScrolled);
-      if (a = 0) {
-        this.scroll = false;
-      }
-      if (a > 0 && a < 100) {
-        this.scroll = !this.scroll;
-      }
-      if (a > 100 && a < 200) {
-        this.scroll = !this.scroll;
-      }
-      if (a >= 200) {
-        this.scroll = !this.scroll;
-      }
-    }, 10)   
-  };
-
   ngAfterViewInit(){
-    this.setScrollVar()
+
   }
 
 }

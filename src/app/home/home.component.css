@@ -8,7 +8,6 @@
     /* blending animations */
     height: 200px;
     width: 73%;
-    --bg-red: rgb(255, 36, 21);
     background-color: var(--bg-red);
     mix-blend-mode: screen;
     animation: textWrapper 7s;

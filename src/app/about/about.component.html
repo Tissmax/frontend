@@ -1,0 +1,22 @@
+<section>
+    <aside>
+        <h1>Compétences</h1>
+        <div *ngFor="let ability of abilitys" id="ability{{ability.id}}">
+            <p> {{ability.ability}} </p>
+            <div>
+                <p>{{ability.mastery}}%</p>
+            </div>
+        </div>
+    </aside>
+    <div id="parcours">
+        <h1>Parcours</h1>
+        <div *ngFor="let card of cards" id="card-wrapper">
+            <div id="{{card.id}}" class="card">
+                <h2>{{card.title}}</h2>
+                <h3>{{card.subTitle}}</h3>
+                <span>{{card.text}}</span>
+                <p>{{card.description}}</p>
+            </div>
+        </div>
+    </div>
+</section>

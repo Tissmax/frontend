@@ -1,0 +1,76 @@
+section {
+    display: flex;
+    flex-flow: row wrap;
+    width: 50vw;
+    height: 80vh;
+    margin-top: 10vh;
+    padding: 0 2vw 0 2vw;
+}
+#parcours {
+    margin-left: 40px;
+}
+#card-wrapper {
+    justify-content: center;
+    margin-top: 3vh;
+}
+.card {
+    height: 500px;
+    width: 350px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: #0C1325 solid 4px;
+    outline: #fff solid 5px;
+    outline-offset: 0px;
+    color: black;
+    padding: 10px 10px;
+    position: absolute;
+    z-index: 5;
+
+}
+.card p,
+.card span{
+    color: var(--bg-black);
+}
+aside {
+    width: 20vw;
+}
+aside div div{
+    height: 5vh;
+    margin-top: 1vh;
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-black);
+}
+aside div div p {
+    margin-left: 10px;
+}
+aside div p {
+    margin: 0;
+    margin-top: 1vh;
+}
+aside h1 {
+    margin-bottom: 3vh;
+}
+
+h1 {
+    font-size: 4em;
+    color: #fff;
+    margin: 0;
+    margin-top: 5vh;
+}
+h2 {
+    font-size: 2em;
+    font-weight: 350;
+    color: var(--bg-red);
+    margin: 0;
+}
+h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: var(--bg-black);
+}
+span {
+    font-size: 1em;
+    color: var(--bg-black);
+
+}
