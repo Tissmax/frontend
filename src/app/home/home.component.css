@@ -1,0 +1,107 @@
+.text-wrapper{
+    display: inline-block;
+    margin-left: 20vw;
+    margin-top: 20vh;
+    width: 35%;
+}
+.blend {
+    /* blending animations */
+    height: 200px;
+    width: 73%;
+    --bg-red: rgb(255, 36, 21);
+    background-color: var(--bg-red);
+    mix-blend-mode: screen;
+    animation: textWrapper 7s;
+
+    /* showing letter by letter */
+    
+}
+.typer {
+    animation: typing 7s;
+
+
+}
+
+h1:hover {
+    font-weight: 600;
+    transition: .5s;
+}
+
+h1 {
+    margin: 0;
+    mix-blend-mode: difference;
+    position: absolute;
+    animation: h1Animations 5s; 
+} 
+.rs {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    margin-top: 10vh;
+    margin-right: 10vw;
+    transform: scale(110%);
+
+}
+p, .rs {
+    animation: fadeIn 8s;
+
+}
+p {
+    font-size: 30px;
+    margin-left: 20px;
+    margin-top: 5vh;
+}
+svg {
+    height: 70px;
+    width: 70px;
+    fill: white;
+    filter: drop-shadow(-7px 11px 13px #000000);
+    
+}
+svg:hover, path:hover, a {
+    fill: var(--bg-red);
+}
+path {
+    fill: white;
+}
+
+
+
+
+@keyframes h1Animations {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+        font-weight: 600
+    }
+    100%{
+        opacity: 1;
+        font-weight: 400;
+    }
+
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes typing {
+    0% { width: 0; overflow: hidden;}
+    50% {width: 0%; opacity: 0; overflow: hidden;}
+    85% { width: 35%; opacity: 1; overflow: hidden;}
+
+}
+@keyframes textWrapper {
+    0% { width: 0; opacity: 0;}
+    50% {width: 0%; opacity: 1;}
+    80% { width: 100%;}
+    100% { width: 73%;}
+}

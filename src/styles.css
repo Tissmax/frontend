@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+    --bg-black: rgb(36, 39, 51);
+    --bg-red: rgba(231, 43, 30, 0.89);
+
+}
+
+body {
+    margin: 0;
+}
+html {
+    scroll-snap-type: y mandatory;
+}
+a, p, span, article {
+    color: white;
+    font-family: "Open Sans";
+    font-weight: 400;
+}
+h1 {
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 15em;
+    font-style: normal;
+    color: var(--bg-red);
+}

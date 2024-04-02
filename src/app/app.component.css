@@ -1,0 +1,70 @@
+
+div {
+    display: flex;
+    flex-direction: column;
+    background-color: none;
+}
+nav {
+    height: 30px;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-variant-caps: small-caps;
+    animation: fadeIn 8s;
+}
+a:hover {
+    opacity: .5;
+    transition: .4;
+}
+section {
+    height: 100vh;
+    min-height: 100px;
+    min-width: 100%;
+    position: relative;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+#home {
+    background-color: var(--bg-black);
+    animation: bgColorFade 5s;
+}
+#project {
+    background-color: var(--bg-black);
+}
+#about {    
+    background-color: var(--bg-red);
+}
+#contact {
+    background-color: var(--bg-red);
+}
+a {
+    color: rgb(255, 255, 255);
+    margin-right: 20px;
+    margin-top: 5px;
+    text-decoration: none;
+}
+
+
+@keyframes bgColorFade {
+    from {
+        background-color: black;
+    }
+    to {
+        background-color: var(--bg-black);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
