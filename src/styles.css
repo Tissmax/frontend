@@ -2,6 +2,7 @@
 :root{
     --bg-black: rgb(36, 39, 51);
     --bg-red: rgba(231, 43, 30, 0.89);
+    --about-animation-trigger: paused;
 
 }
 
@@ -24,3 +25,6 @@ h1, h2, h3 {
     font-style: normal;
     color: var(--bg-red);
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

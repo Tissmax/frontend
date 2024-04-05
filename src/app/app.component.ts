@@ -5,6 +5,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { ProjectComponent } from './project/project.component';
+import { Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -22,13 +23,29 @@ import { ProjectComponent } from './project/project.component';
 export class AppComponent {
   title = 'frontend';
 
-  constructor() { }
+  isAboutInViewport: boolean = false;
+  isContactInViewport: boolean = false;
+  isProjetInViewport: boolean = false;
+  homeHover:boolean = false;
+  contactHover:boolean = false;
+  aboutHover:boolean = false;
+  projectHover:boolean = false;
 
-  percentOfScreenHeightScrolled: string = "";
-  scroll: boolean = false;
 
-  ngAfterViewInit(){
+  constructor(private renderer: Renderer2) { }
 
+  ngAfterViewInit(){}
+
+  animationTrigger() {
+    if (this.isAboutInViewport) {
+      document.documentElement.style.setProperty('--about-animation-trigger', 'running');
+    }
+    if (this.isAboutInViewport) {
+      document.documentElement.style.setProperty('--projet-animation-trigger', 'running');
+    }
+    if (this.isAboutInViewport) {
+      document.documentElement.style.setProperty('--contact-animation-trigger', 'running');
+    }
   }
 
 }

@@ -1,9 +1,4 @@
 
-div {
-    display: flex;
-    flex-direction: column;
-    background-color: none;
-}
 nav {
     height: 30px;
     width: 100%;
@@ -15,9 +10,39 @@ nav {
     font-variant-caps: small-caps;
     animation: fadeIn 8s;
 }
+nav div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+i {
+    font-size: 30px;
+    opacity: 0;
+    height: 0;
+    color: white;
+}
+.display {
+    opacity: 1;  
+}
+a {
+    color: rgb(255, 255, 255);
+    margin-right: 20px;
+    margin-top: 5px;
+    text-decoration: none;
+}
+
 a:hover {
     opacity: .5;
     transition: .4;
+}
+
+
+
+.components-container {
+    display: flex;
+    flex-direction: column;
+    background-color: none;
 }
 section {
     height: 100vh;
@@ -39,12 +64,6 @@ section {
 }
 #contact {
     background-color: var(--bg-red);
-}
-a {
-    color: rgb(255, 255, 255);
-    margin-right: 20px;
-    margin-top: 5px;
-    text-decoration: none;
 }
 
 
