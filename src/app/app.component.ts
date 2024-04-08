@@ -26,6 +26,7 @@ export class AppComponent {
   isAboutInViewport: boolean = false;
   isContactInViewport: boolean = false;
   isProjetInViewport: boolean = false;
+  
   homeHover:boolean = false;
   contactHover:boolean = false;
   aboutHover:boolean = false;

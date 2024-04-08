@@ -1,7 +1,6 @@
   <nav>
       <a href ="#home"><i [ngClass]="{'display': homeHover}">.</i>Home</a>
-      <a href="#about"><i [ngClass]="{'display': aboutHover}">.</i>About</a>
-      <a href ="#project"><i [ngClass]="{'display': projectHover}">.</i>Projets</a>
+      <a href="#about"><i [ngClass]="{'display': aboutHover || projectHover}">.</i>À-propos</a>
       <a href="#contact"><i [ngClass]="{'display': contactHover}">.</i>Contact</a>
   </nav>
   <div class="components-container">
@@ -14,20 +13,15 @@
       <app-home></app-home>
     </section>
 
-    <section id="about-project" 
-    (mouseenter)="isAboutInViewport=!isAboutInViewport; 
+    <section id="about-project"(mouseenter)="isAboutInViewport=!isAboutInViewport;
+    isProjetInViewport=!isProjetInViewport; 
     animationTrigger();
-    aboutHover=!aboutHover"
-    (mouseleave)="aboutHover=!aboutHover">
+    aboutHover=!aboutHover; 
+    projectHover=!projectHover"
+    (mouseleave)="aboutHover=!aboutHover; 
+    projectHover=!projectHover">
       <app-about></app-about>
       <app-project></app-project>
-    </section>
-    <section id="project"
-    (mouseenter)="isProjetInViewport=!isProjetInViewport; 
-    animationTrigger();   
-    projectHover=!projectHover"
-    (mouseleave)="projectHover=!projectHover">
-      
     </section>
     <section id="contact" 
     (mouseenter)="isContactInViewport=!isContactInViewport; 

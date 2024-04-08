@@ -62,7 +62,7 @@ svg {
     
 }
 svg:hover, path:hover, a {
-    fill: var(--bg-red);
+    fill: #63bed4;
 }
 path {
     fill: white;
