@@ -36,6 +36,7 @@ export class AppliMeteoComponent {
   conditions: string = "";
   fetchHumidity: string = "";
   update: string ="";
+  text: string="";
 
 async fetchMeteo(ville: string) {
 
@@ -51,7 +52,8 @@ async fetchMeteo(ville: string) {
       const data = await res.json();
       this.temp = data.current.temp_c.toFixed(0);
       this.conditions = data.current.condition.text;
-      this.update = data.current.last_updated;
+      let update = data.current.last_updated.split(' ');
+      this.update = update[1];
       this.fetchIcon = data.current.condition.icon;
       this.fetchHumidity = data.current.humidity;
 

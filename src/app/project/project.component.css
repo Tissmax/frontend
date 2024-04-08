@@ -28,7 +28,16 @@ section {
     animation: conteneurAnim 1s ease-out;
     animation-play-state: var(--about-animation-trigger);
 }
-
+.conteneur::before {
+    content: 'Projets:';
+    color: var(--bg-black);
+    font-size: 60px;
+    position: absolute;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    bottom: 10vh;
+    margin-left: 5px;
+    font-variant-caps: small-caps;
+}
 li {
     list-style: none;
     display: flex;
