@@ -1,0 +1,14 @@
+<div id="parcours">
+    <h1>Parcours</h1>
+    <div *ngFor="let card of cards" id="card-wrapper">
+        <div id="{{card.id}}" class="card card{{card.id}}" title="{{card.date}}">
+            <div class="card-conteneur">
+                <h2>{{card.title}}</h2>
+                <h3>{{card.subTitle}}</h3>
+                <span>{{card.text}}</span>
+                <p>{{card.description}}</p>
+            </div>
+            <button id="btn"(click)="cardShuffle(card.id)">{{card.nextDate}}</button>
+        </div>
+    </div>
+</div>

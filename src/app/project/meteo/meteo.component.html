@@ -1,0 +1,12 @@
+<section *ngIf="showMeteo">
+    <div id="elem">
+        <form (submit)="onSubmit()">
+            <input [(ngModel)]="ville" type="text" name="ville" placeholder="City name" id="abc" (keydown.enter)="onKeydown($event)">
+            <div  *ngIf="notCity" class="alert" > {{error}} </div>
+        </form>
+        <h1 id="titre">Weather in {{ville || "Bordeaux"}}</h1>
+        <h2 id="temperature"> {{temp}}°C </h2>
+        <p id="humidity">Humidity: {{fetchHumidity}}% </p>     
+        <img id="icon" [src]="fetchIcon" [alt]="conditions"> 
+    </div>
+</section>

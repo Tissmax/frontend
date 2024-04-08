@@ -38,7 +38,6 @@ a:hover {
 }
 
 
-
 .components-container {
     display: flex;
     flex-direction: column;
@@ -54,15 +53,97 @@ section {
 }
 #home {
     background-color: var(--bg-black);
+    mix-blend-mode: screen;
     animation: bgColorFade 5s;
+
+}
+.border {
+    height: 5vh;
+    top: 0;
+    width: 81vw;
+    left: 17.5vw;
+    border-left: solid white 3px;
+    position: absolute;
+    animation: borderLeft 2.5s ease infinite;
+    mix-blend-mode: hard-light;
+    animation-delay: 10s;
+    opacity: 0;
+    filter: blur(3px);
+}
+@keyframes borderLeft {
+    0% {opacity:0; top: 0vh;}
+    70% {opacity:0; top: 0vh;}
+    80% {opacity: 1;}
+    100% {top: 100vh; opacity: 1;}
+}
+.border2{
+    content: "";
+    border-top: solid white 3px;
+    width: 2vw;
+    position: absolute;
+    top: 7.5vh;    
+    animation: borderTop 5s ease-in infinite;
+    opacity: 0;
+    animation-delay: 12s;
+    border-bottom: none;
+    mix-blend-mode: hard-light;
+    filter: blur(3px);
+}
+@keyframes borderTop {
+    0% {opacity:0; left: 0vw;}
+    80% {opacity:0; left: 0vw;}
+    85% {opacity: 1;}
+    100% {left: 100vw; opacity: 1;}
+}
+.img {
+    height: 85vh;
+    width: 81vw;
+    background-image: url(assets/wolfgang-hasselmann-iOyHLIsGRz0-unsplash.jpg);
+    mix-blend-mode: color-dodge;
+    filter: grayscale();
+    z-index: 0;
+    position: absolute;
+    opacity: 0;
+    top: 7.5vh;
+    left: 17.5vw;
+    animation: oapactityBg 30s ease infinite;
+    animation-delay: 4s;
+    
+}
+.img::after{
+    content: "";
+    height: 100vh;
+    position: absolute;
+    top: -8vh;
+    opacity: 1;
+    border-left: solid white 3px;
+}
+.img::before{
+    content: "";
+    width: 100vw;
+    position: absolute;
+    left: -17.5vw;
+    opacity: 1;
+    border-top: solid white 3px;
+}
+@keyframes oapactityBg{
+    0% {opacity: 0;}
+    50% {opacity: 0.1;}
+    100% {opacity: 0;}
 }
 #project {
+    z-index: 0;
     background-color: var(--bg-black);
 }
-#about {    
-    background-color: var(--bg-red);
+#about-project {    
+    z-index: 0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: var(--bg-black);
 }
 #contact {
+    z-index: 0;
     background-color: var(--bg-red);
 }
 

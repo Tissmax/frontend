@@ -1,0 +1,133 @@
+#parcours {
+    margin-top: 1vh;
+}
+#card-wrapper {
+    justify-content: center;
+    margin-top: 4vh;
+}
+.card {
+    height: 40vh;
+    width: 70%;
+    display: grid;
+    grid-template-rows: 80% 20%;
+    background-color: #fff;
+    border-radius: 10px;
+    border: #0C1325 solid 4px;
+    outline: #fff solid 5px;
+    outline-offset: 0px;
+    color: black;
+    padding: 10px 10px;
+    position: absolute;
+    z-index: 5;
+    transform-origin: bottom left;
+
+}
+.card-conteneur {
+    grid-row: 1;
+}
+.card p,
+.card span{
+    color: var(--bg-black);
+}
+.noDisplay3 {
+    z-index: 1;
+    animation: cardShuffle 1s ease-out;
+}
+.noDisplay2 {
+    z-index: 2;
+    animation: cardShuffle 1s ease-out;
+}
+.noDisplay1 {
+    z-index: 3;
+    animation: cardShuffle 1s ease-out;
+}
+.noDisplay0 {
+    z-index: 4;
+    animation: cardShuffle 1s ease-out;
+}
+#btn {
+    width: 100%;
+    font-size: 3em;
+    background-color: var(--bg-red);
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-variant-caps: small-caps;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+}
+#btn:hover {
+    background-color: var(--bg-black);
+}
+.card::after {
+    content: attr(title);
+    z-index: 6;
+    color: white;
+    position: absolute;
+    background-color: blue;
+    width: 18%;
+    top: -28.5px;
+    padding-left: 2%;
+}
+.card2::after {
+    margin-left: 5%;
+    background-color: green;
+
+}
+.card1::after {
+    margin-left: 10%;
+    background-color: rgb(230, 146, 21);
+
+}
+.card0::after {
+    margin-left: 15%;
+    background-color: black;
+
+}
+@keyframes cardShuffle{
+    0% {
+        transform: translateX(10px);
+        z-index: 5;
+    }
+    20% {
+        transform: translateX(50px);
+    }
+    100% {
+        z-index: 4;
+    }
+}
+
+h1 {
+    font-size: 2em;
+    color: #fff;
+    margin: 0;
+    margin-top: 2.5vh;
+    background-color: var(--bg-black);
+    width: 20%;
+    animation: h1BgAnim 2s;
+    animation-play-state: var(--about-animation-trigger);
+
+}
+@keyframes h1BgAnim {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 20%;       
+    }
+}
+h2 {
+    font-size: 2em;
+    font-weight: 350;
+    color: var(--bg-red);
+    margin: 0;
+}
+h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: var(--bg-black);
+}
+span {
+    font-size: 1em;
+    color: var(--bg-black);
+
+}

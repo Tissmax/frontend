@@ -1,0 +1,16 @@
+<section>
+    <app-appli-meteo [showMeteo]="showMeteo" [ville]="ville"></app-appli-meteo>
+    <div class="conteneur"></div>
+    <li>
+        <ul [class]="{'active': showMeteo}" (click)="showMeteoo()">
+            <i class="fa fa-check"></i>
+            La météo en temps réel</ul>
+        <ul>
+            <i class="fa fa-check"></i>
+            App2</ul>
+        <ul>
+            <i class="fa fa-check"></i>
+            App3
+        </ul>
+    </li>
+</section>

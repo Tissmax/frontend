@@ -1,0 +1,60 @@
+section {
+    position: absolute;
+    top: 13vh;
+    width: 40vw;
+
+}
+#elem {
+    margin: 0;
+    z-index: 10;
+}
+input {
+    grid-row: 1;
+    grid-column: 1/3;
+    width: 90%;
+    height: 50px;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--bg-black);
+    color: white;
+    font-size: larger;
+}
+input:hover {
+    border-bottom: none;
+    transition: .3s;
+}
+input:focus {
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.336);
+}
+h1 {
+    padding-top: 20px;
+    font-size: 70px;
+    margin: 0;
+}
+h2 {
+    grid-row: 3;
+    grid-column: 2;
+    font-size: 70px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+}
+img {
+    transform: scale(180%);
+    position: absolute;
+    top: 25%;
+    left: 70%;
+}
+
+h1, p, h2 {
+    color: var(--bg-black);
+    margin-left: 20px;
+}
+.alert {
+    color: red;
+    font-family: 'Courier New', Courier, monospace;
+}
+form {
+    padding-left: 20px;
+    padding-top: 20px;
+}

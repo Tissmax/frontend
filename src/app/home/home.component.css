@@ -1,3 +1,6 @@
+* {
+    z-index: 2;
+}
 .text-wrapper{
     display: inline-block;
     margin-left: 20vw;
@@ -8,7 +11,7 @@
     /* blending animations */
     height: 200px;
     width: 73%;
-    background-color: rgb(255, 40, 24);
+    background-color: var(--bg-red);
     mix-blend-mode: screen;
     animation: textWrapper 7s;
 
@@ -22,12 +25,13 @@
 }
 
 h1:hover {
-    font-weight: 600;
+    font-weight: 400;
     transition: .5s;
 }
 
 h1 {
     margin: 0;
+    font-weight: 630;
     mix-blend-mode: difference;
     position: absolute;
     animation: h1Animations 5s; 
@@ -36,8 +40,8 @@ h1 {
     display: flex;
     gap: 25px;
     justify-content: center;
+    width: 55%;
     margin-top: 10vh;
-    margin-right: 10vw;
     transform: scale(110%);
 
 }
@@ -73,11 +77,11 @@ path {
     }
     50% {
         opacity: 0;
-        font-weight: 600
+        font-weight: 400
     }
     100%{
         opacity: 1;
-        font-weight: 400;
+        font-weight: 600;
     }
 
 }

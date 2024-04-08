@@ -1,59 +1,55 @@
-import { Component, Renderer2 } from '@angular/core';
-import { Card } from './card';
-import { CardsService } from './cards.service';
+import { Component,  } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Ability } from './ability';
-import { AbilityService } from './ability.service';
-import { OnInit } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
-import { log } from 'console';
+import { CompetencesComponent } from './competences/competences.component';
+import { ParcoursComponent } from './parcours/parcours.component';
+import { MotivationsComponent } from './motivations/motivations.component';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule,
-            MatCardModule,            
-  ],
-  providers: [CardsService,
-              AbilityService,
+  imports: [
+    CommonModule,
+    MatCardModule,
+    CompetencesComponent,
+    ParcoursComponent,
+    MotivationsComponent            
   ],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })
-export class AboutComponent implements OnInit{
+export class AboutComponent {
 
-  cards!: Card[];
-  abilitys!: Ability[];
-  i: number = 0;
+  isCompetences : boolean = true;
+  isMotivations : boolean = false;
+  isParcours : boolean = false;
+  a: string="a";
+  b: string="b";
+  c: string="d"
 
-  constructor(private cardService: CardsService, 
-              private abilityService: AbilityService,
-              private renderer: Renderer2) {}
-  
-  ngOnInit(): void {
-    this.cards = this.cardService.getCard();
-    this.abilitys = this.abilityService.getSingleAbility();
-  }
-
-  cardShuffle(id: string) {
-    const card1 = document.getElementById("3"); 
-    const card2 = document.getElementById("2"); 
-    const card3 = document.getElementById("1"); 
-    const card4 = document.getElementById("0"); 
+  showComponent(activeComponent: string) {
     
-    this.i++;
-    let card = document.getElementById(id);
-    this.renderer.addClass(card, `noDisplay${id}`);
-    if (this.i == 4) {
-      this.renderer.removeClass(card1, "noDisplay3");
-      this.renderer.removeClass(card2, "noDisplay2");
-      this.renderer.removeClass(card3, "noDisplay1");
-      this.renderer.removeClass(card4, "noDisplay0");
-      this.i = 0
+    if(activeComponent == this.a) {
+      this.isCompetences=true;
+      this.isMotivations=false;
+      this.isParcours=false;
     }
-    
+    if(activeComponent == this.b) {
+      this.isMotivations=true;
+      this.isCompetences=false;
+      this.isParcours=false;
+    }
+    if(activeComponent == this.c) {
+      this.isParcours=true;
+      this.isMotivations=false;
+      this.isCompetences=false;
+    }
+
+  }
+
+
   }
 
 
 
-}
+

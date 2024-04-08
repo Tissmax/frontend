@@ -1,24 +1,15 @@
 <section>
-    <aside>
-        <h1>Compétences</h1>
-        <div *ngFor="let ability of abilitys" id="{{ability.ability}}">
-            <p> {{ability.ability}} </p>
-            <div>
-            </div>
-        </div>
-    </aside>
-    <div id="parcours">
-        <h1>Parcours</h1>
-        <div *ngFor="let card of cards" id="card-wrapper">
-            <div id="{{card.id}}" class="card card{{card.id}}" title="{{card.date}}">
-                <div class="card-conteneur">
-                    <h2>{{card.title}}</h2>
-                    <h3>{{card.subTitle}}</h3>
-                    <span>{{card.text}}</span>
-                    <p>{{card.description}}</p>
-                </div>
-                <button id="btn"(click)="cardShuffle(card.id)">NexT</button>
-            </div>
-        </div>
-    </div>
+    
+    <mat-card>
+        <mat-card-actions class="en-tete">
+            <button (click)="showComponent(a)" [ngClass]="{'red': isCompetences}">Compétences</button>
+            <button (click)="showComponent(b)"[ngClass]="{'red': isMotivations}">Motivations</button>
+            <button (click)="showComponent(c)"[ngClass]="{'red': isParcours}">Parcours</button>
+        </mat-card-actions>
+        <mat-card-content class="corps">
+            <app-competences *ngIf="isCompetences"></app-competences>
+            <app-motivations *ngIf="isMotivations"></app-motivations>
+            <app-parcours *ngIf="isParcours"></app-parcours>
+        </mat-card-content>
+    </mat-card> 
 </section>
