@@ -9,14 +9,7 @@ section {
     margin-top: 50px;
     border-top-left-radius: 100px;
 }
-@keyframes conteneurAnim {
-    from {
-        transform: translateX(180%);
-    }
-    to {
-        transform: translateX(0%);
-    }
-}
+
 .conteneur::after {
     content: '';
     height: 10%;
@@ -25,8 +18,6 @@ section {
     border-top-right-radius: 25px;
     position: absolute;
     bottom: 0;
-    animation: conteneurAnim 1s ease-out;
-    animation-play-state: var(--about-animation-trigger);
 }
 .conteneur::before {
     content: 'Projets:';

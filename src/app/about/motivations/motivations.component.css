@@ -4,14 +4,22 @@ div {
 }
 h1 {
     font-size: 2em;
-    color: #fff;
+    color: white;
     margin: 0;
     margin-top: 2.5vh;
-    background-color: var(--bg-black);
-    width: 20%;
-    animation: h1BgAnim 2s;
-    animation-play-state: var(--about-animation-trigger);
+    mix-blend-mode: difference;
 
+}
+strong {
+    color: var(--bg-black);
+    background-color: var(--bg-red);
+    width: 100%;
+}
+.blend {
+    animation: h1BgAnim 2s;
+    background-color: var(--bg-red);
+    width: 20%;
+    animation-play-state: var(--about-animation-trigger);
 }
 @keyframes h1BgAnim {
     from {

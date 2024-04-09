@@ -1,25 +1,26 @@
   <nav>
       <a href ="#home"><i [ngClass]="{'display': homeHover}">.</i>Home</a>
-      <a href="#about"><i [ngClass]="{'display': aboutHover || projectHover}">.</i>À-propos</a>
+      <a href="#about-project"><i [ngClass]="{'display': aboutHover || projectHover}">.</i>À-propos</a>
       <a href="#contact"><i [ngClass]="{'display': contactHover}">.</i>Contact</a>
   </nav>
   <div class="components-container">
+    
     <section id="home"
-    (mouseenter)="homeHover=!homeHover"
-    (mouseleave)="homeHover=!homeHover">
-      <div class="border"></div>
-      <div class="border2"></div>
-      <div class="img"></div>
+    (mouseenter)="homeHover = !homeHover"
+    (mouseleave)="homeHover = !homeHover">
+    <div class="border"></div>
+    <div class="border2"></div>
+    <div class="img"></div>
       <app-home></app-home>
     </section>
 
-    <section id="about-project"(mouseenter)="isAboutInViewport=!isAboutInViewport;
-    isProjetInViewport=!isProjetInViewport; 
+    <section id="about-project"(mouseenter)="isAboutInViewport = !isAboutInViewport;
+    isProjetInViewport = !isProjetInViewport; 
     animationTrigger();
-    aboutHover=!aboutHover; 
-    projectHover=!projectHover"
-    (mouseleave)="aboutHover=!aboutHover; 
-    projectHover=!projectHover">
+    aboutHover = !aboutHover; 
+    projectHover = !projectHover"
+    (mouseleave)="aboutHover = !aboutHover; 
+    projectHover = !projectHover">
       <app-about></app-about>
       <app-project></app-project>
     </section>

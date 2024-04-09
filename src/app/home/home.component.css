@@ -41,31 +41,35 @@ h1 {
     gap: 25px;
     justify-content: center;
     width: 55%;
-    margin-top: 10vh;
-    transform: scale(110%);
+    margin-top: 5vh;
 
 }
-p, .rs {
+h2, .rs {
     animation: fadeIn 8s;
 
 }
-p {
-    font-size: 30px;
+h2 {
+    font-size: 40px;
     margin-left: 20px;
     margin-top: 5vh;
+    color: white;
 }
 svg {
-    height: 70px;
-    width: 70px;
-    fill: white;
+    height: 65px;
+    width: 65px;
+    fill: var(--bg-red);
     filter: drop-shadow(-7px 11px 13px #000000);
     
 }
-svg:hover, path:hover, a {
+.invisible {
+    fill: none;
+}
+.blue, .blue path {
     fill: #63bed4;
 }
+
 path {
-    fill: white;
+    fill: var(--bg-red);
 }
 
 

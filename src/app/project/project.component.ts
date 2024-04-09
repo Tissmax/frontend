@@ -14,11 +14,14 @@ import { AppliMeteoComponent } from './meteo/meteo.component';
 export class ProjectComponent {
 
   ville: string = "";
-  showMeteo: boolean = false;
+  showMeteo: boolean = true;
+  meteoReset: boolean = true;
 
   @ViewChild(AppliMeteoComponent) child!: AppliMeteoComponent
   
-  
+  constructor () {}
+
+
   showMeteoo() {
 
       this.showMeteo = !this.showMeteo;

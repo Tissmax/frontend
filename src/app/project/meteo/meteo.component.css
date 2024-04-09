@@ -26,13 +26,9 @@ input {
     color: var(--bg-black);
     font-size: larger;
 }
-input:hover {
-    border-bottom: none;
-    transition: .3s;
-}
+
 input:focus {
     outline: none;
-    border: none;
 }
 h1 {
     grid-row: 2;
@@ -40,16 +36,6 @@ h1 {
     padding-top: 20px;
     font-size: 70px;
     margin: 0;
-}
-h2 {
-    grid-row: 2;
-    grid-column: 2;
-    font-size: 70px;
-    margin: 0;
-    font-weight: 600;
-    padding-top: 20px;
-    color: var(--bg-black);
-    text-align: center;
 }
 
 img {
@@ -60,7 +46,25 @@ img {
     justify-self: center;
     margin: auto;
 }
-
+button {
+    grid-row: 2;
+    grid-column: 2;
+    height: 2.8em;
+    margin-top: 0.4em;
+    background: none;
+    border: none;
+    background-color: var(--bg-black);
+    border-radius: 0.2em;
+    font-size: 1.5em;
+    font-variant-caps: small-caps;
+    color: white;
+    padding: 0 10px ;
+}
+button:hover{
+    color: var(--bg-black);
+    background-color: #63bed4;
+    cursor: pointer;
+}
 h1, p span{
     color: var(--bg-black);
     margin-left: 20px;

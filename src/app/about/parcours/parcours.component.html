@@ -1,5 +1,7 @@
 <div id="parcours">
-    <h1>Parcours</h1>
+    <div class="blend">
+        <h1>Parcours</h1>
+    </div>
     <div *ngFor="let card of cards" id="card-wrapper">
         <div id="{{card.id}}" class="card card{{card.id}}" title="{{card.date}}">
             <div class="card-conteneur">
@@ -8,7 +10,7 @@
                 <span>{{card.text}}</span>
                 <p>{{card.description}}</p>
             </div>
-            <button id="btn"(click)="cardShuffle(card.id)">{{card.nextDate}}</button>
+            <button id="btn"(click)="cardShuffle(card.id)"><i class="fa fa-long-arrow-right"></i>Mon année {{card.nextDate}}</button>
         </div>
     </div>
 </div>

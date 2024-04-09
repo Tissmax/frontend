@@ -22,13 +22,17 @@ export class AppliMeteoComponent {
     this.notCity=false;
     this.fetchMeteo(this.ville)
   }
+  onClick() {
+    this.notCity=false;
+    this.fetchMeteo(this.ville)
+  }
+  @Input() showMeteo: boolean = false;
+  @Input() ville: string = "Bordeaux";
+  @Input() meteoReset: boolean = false; 
 
-
-  @Input() ville: string = "Bordeaux"
   onSubmit() {
     return this.ville;
   }
-  @Input() showMeteo: boolean = false;
 
   notCity : boolean = false;
   temp: number = 0;
@@ -37,6 +41,9 @@ export class AppliMeteoComponent {
   fetchHumidity: string = "";
   update: string ="";
   text: string="";
+  enTete: string="";
+  submit: boolean = false;
+
 
 async fetchMeteo(ville: string) {
 
@@ -55,8 +62,9 @@ async fetchMeteo(ville: string) {
       let update = data.current.last_updated.split(' ');
       this.update = update[1];
       this.fetchIcon = data.current.condition.icon;
-      this.fetchHumidity = data.current.humidity;
-
+      this.fetchHumidity = `${data.current.humidity}%`;
+      this.enTete = `Il fait ${this.temp}°C à ${ville}`;
+      this.submit = true;
 
 //On attrappe le message d'erreur et on l'affiche
     } catch (error) {

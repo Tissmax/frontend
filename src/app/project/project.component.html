@@ -1,8 +1,8 @@
 <section>
-    <app-appli-meteo [showMeteo]="showMeteo" [ville]="ville"></app-appli-meteo>
+    <app-appli-meteo [showMeteo]="showMeteo" [ville]="ville" [meteoReset]="meteoReset"></app-appli-meteo>
     <div class="conteneur"></div>
     <li>
-        <ul [class]="{'active': showMeteo}" (click)="showMeteoo()">
+        <ul [class]="{'active': showMeteo}" (click)="showMeteoo(); meteoReset=!meteoReset">
             <i class="fa fa-check"></i>
             La météo en temps réel</ul>
     </li>

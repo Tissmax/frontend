@@ -4,12 +4,13 @@
             <input [(ngModel)]="ville" type="text" name="ville" placeholder="Nom de la ville" id="abc" (keydown.enter)="onKeydown($event)">
             <div  *ngIf="notCity" class="alert" > {{error}} </div>
         </form>
-        <h1 id="titre">Weather in {{ville || "Bordeaux"}}</h1>
-        <h2 id="temperature"> {{temp}}°C </h2>
-        <p id="humidity"><span>Humidity: </span>{{fetchHumidity}}% <br>
-            <span>Conditions: </span>{{conditions}} <br>
-            <span>Last Update: </span>{{update}}
+        <h1 id="titre">{{enTete || "Entrer le nom d'une Ville pour commencer"}}</h1>
+        <p id="humidity">
+            <span *ngIf="submit">Humidité: </span>{{fetchHumidity}}<br>
+            <span *ngIf="submit">Conditions: </span>{{conditions}} <br>
+            <span *ngIf="submit">Dernière mise à jour: </span>{{update}}
         </p>
         <img id="icon" [src]="fetchIcon" [alt]="conditions"> 
+        <button type="submit" (click)="onClick()">Rechercher</button>
     </div>
 </section>

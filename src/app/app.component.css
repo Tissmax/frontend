@@ -7,15 +7,11 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    font-variant-caps: small-caps;
-    animation: fadeIn 8s;
-}
-nav div {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     align-items: center;
+    font-variant-caps: small-caps;
+    animation: fadeIn 6s;
 }
+
 i {
     font-size: 30px;
     opacity: 0;
@@ -54,7 +50,7 @@ section {
 #home {
     background-color: var(--bg-black);
     mix-blend-mode: screen;
-    animation: bgColorFade 5s;
+    animation: bgColorFade 3s;
 
 }
 .border {
@@ -66,7 +62,7 @@ section {
     position: absolute;
     animation: borderLeft 2.5s ease infinite;
     mix-blend-mode: hard-light;
-    animation-delay: 10s;
+    animation-delay: 8s;
     opacity: 0;
     filter: blur(3px);
 }
@@ -84,7 +80,7 @@ section {
     top: 7.5vh;    
     animation: borderTop 5s ease-in infinite;
     opacity: 0;
-    animation-delay: 12s;
+    animation-delay: 10s;
     border-bottom: none;
     mix-blend-mode: hard-light;
     filter: blur(3px);
@@ -107,7 +103,7 @@ section {
     top: 7.5vh;
     left: 17.5vw;
     animation: oapactityBg 30s ease infinite;
-    animation-delay: 4s;
+    animation-delay: 2s;
     
 }
 .img::after{
