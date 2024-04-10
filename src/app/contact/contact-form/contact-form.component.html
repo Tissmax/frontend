@@ -1,0 +1,34 @@
+<div class="form-conteneur">
+    <form #contactForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-group prenom">
+            <label for="prenom">Prénom:</label>
+            <input type="text" class="form-control" id="prenom" required placeholder="Prénom" [(ngModel)]="model.prenom"
+                name="prenom" #prenom="ngModel">
+            <div [hidden]="prenom.valid || prenom.pristine" class="alert alert-danger">
+                Le prénom est requis
+            </div>
+            <div class="form-group nom">
+                <label for="nom">Nom:</label>
+                <input type="text" class="form-control" id="nom" required placeholder="Nom" [(ngModel)]="model.nom"
+                    name="nom">
+                <div [hidden]="prenom.valid || prenom.pristine" class="alert alert-danger">
+                    Le nom est requis
+
+                </div>
+            </div>
+            <div class="form-group mail">
+                <label for="mail">E-mail:</label>
+                <input type="text" class="form-control" id="mail" required placeholder="example@example.com"
+                    [(ngModel)]="model.mail" name="mail">
+                <div [hidden]="prenom.valid || prenom.pristine" class="alert alert-danger">
+                    Le mail est requis
+
+                </div>
+            </div>
+            <div class="form-group message">
+                <label for="message">Message:</label>
+                <textarea type="text" class="form-control" id="message" placeholder="Votre message"
+                    [(ngModel)]="model.message" name="message"></textarea>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success">Envoyer</button>
