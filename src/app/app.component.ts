@@ -5,7 +5,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { ProjectComponent } from './project/project.component';
-import { Renderer2 } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +21,7 @@ import { Renderer2 } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'frontend';
+  title = 'Mathis B.';
 
   isAboutInViewport: boolean = false;
   isContactInViewport: boolean = false;
@@ -33,7 +33,11 @@ export class AppComponent {
   projectHover:boolean = false;
 
 
-  constructor(private renderer: Renderer2) { }
+  constructor(
+              private titleService: Title,
+    ) { 
+      this.titleService.setTitle("Mathis B.")
+     }
 
   ngAfterViewInit(){}
 

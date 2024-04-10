@@ -1,34 +1,38 @@
-<div class="form-conteneur">
-    <form #contactForm="ngForm" (ngSubmit)="onSubmit()">
-        <div class="form-group prenom">
-            <label for="prenom">Prénom:</label>
-            <input type="text" class="form-control" id="prenom" required placeholder="Prénom" [(ngModel)]="model.prenom"
-                name="prenom" #prenom="ngModel">
-            <div [hidden]="prenom.valid || prenom.pristine" class="alert alert-danger">
-                Le prénom est requis
-            </div>
-            <div class="form-group nom">
-                <label for="nom">Nom:</label>
-                <input type="text" class="form-control" id="nom" required placeholder="Nom" [(ngModel)]="model.nom"
-                    name="nom">
-                <div [hidden]="prenom.valid || prenom.pristine" class="alert alert-danger">
-                    Le nom est requis
 
-                </div>
-            </div>
-            <div class="form-group mail">
-                <label for="mail">E-mail:</label>
-                <input type="text" class="form-control" id="mail" required placeholder="example@example.com"
-                    [(ngModel)]="model.mail" name="mail">
-                <div [hidden]="prenom.valid || prenom.pristine" class="alert alert-danger">
-                    Le mail est requis
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div class="form-group prenom">
+        <label for="prenom">Prénom:</label>
+        <input type="text" class="form-control" id="prenom" required placeholder="Prénom" 
+            name="prenom" formControlName="prenom">
+            <div *ngIf="prenom?.invalid && (prenom?.dirty || prenom?.touched)" class="alert alert-danger">
+                <div *ngIf="prenom?.errors?.['required']">Le prénom est requis</div>
+                <div *ngIf="prenom?.errors?.['pattern']">Le prénom n'est pas valide</div>
 
-                </div>
             </div>
-            <div class="form-group message">
-                <label for="message">Message:</label>
-                <textarea type="text" class="form-control" id="message" placeholder="Votre message"
-                    [(ngModel)]="model.message" name="message"></textarea>
-            </div>
+    </div> 
+    <div class="form-group nom">
+        <label for="nom">Nom:</label>
+        <input type="text" class="form-control" id="nom" required placeholder="Nom" formControlName="nom">
+        <div *ngIf="nom?.invalid && (nom?.dirty || nom?.touched)" class="alert alert-danger">
+            <div *ngIf="nom?.errors?.['required']">Le nom est requis</div>
+            <div *ngIf="nom?.errors?.['pattern']">Le nom n'est pas valide</div>
         </div>
-        <button type="submit" class="btn btn-success">Envoyer</button>
+    </div>
+    <div class="form-group mail">
+        <label for="mail">E-mail:</label>
+        <input type="email" class="form-control" id="mail" required placeholder="example@example.com"
+            name="mail" formControlName="mail">
+            <div *ngIf="mail?.invalid && (mail?.dirty || mail?.touched)" class="alert alert-danger">
+                <div *ngIf="mail?.errors?.['required']">L'e-mail est requis</div>
+                <div *ngIf="mail?.errors?.['email']">L'e-mail n'est pas valide</div>
+            </div>
+    </div>
+    <div class="form-group message">
+        <label for="message">Message:</label>
+        <textarea type="text" class="form-control" id="message" placeholder="Votre message" name="message" formControlName="message"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="nom?.invalid || mail?.invalid || prenom?.invalid">Envoyer</button>
+    <div [hidden]="!submitted" class="submitted">
+        <i class="fa fa-check"></i>
+        Vos informations ont bien été envoyées!</div>
+</form>
